@@ -16,7 +16,7 @@ public class Deck {
     for(int a = 1; a < 4; a++) {
       for(int e = 1; e < 4; e++) {
         for(int i = 1; i < 4; i++) {
-          for(int o = 1; i < 4; o++) {
+          for(int o = 1; o < 4; o++) {
             cards.add(new Card(a, e, i, o));
           }
         }
