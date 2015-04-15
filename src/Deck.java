@@ -23,6 +23,7 @@ public class Deck {
       }
     }
     nextCardIndex = 0;
+    
     Collections.shuffle(cards);
   }
   
@@ -31,7 +32,9 @@ public class Deck {
     
     try {
       String line;
+      
       BufferedReader infile = new BufferedReader(new FileReader(filename));
+      
       int position = 0;
   
       while((line = infile.readLine()) != null) {
@@ -55,6 +58,7 @@ public class Deck {
         int shape = Integer.parseInt(tokenizer.nextToken());
         
         cards.add(new Card(quantity, color, shading, shape));
+        
         nextCardIndex = 0;
       }
     }
@@ -70,6 +74,7 @@ public class Deck {
   public Card getNext() {
     if(hasNext() == true) {
       nextCardIndex ++;
+      
       return cards.get(nextCardIndex -1);
     }
     else {

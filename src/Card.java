@@ -8,8 +8,11 @@ public class Card {
   
   public Card(int cQ, int cC, int cS, int cSh) {
     quantity = fixValue(cQ);
+   
     color = fixValue(cC);
+   
     shading = fixValue(cS);
+   
     shape = fixValue(cSh);
   }
   
@@ -45,27 +48,35 @@ public class Card {
     if (color == 1) {
       stringOfColor = "R";
     }
+    
     if (color == 2) {
       stringOfColor = "G";
     }
+   
     if (color == 3) {
       stringOfColor = "P";
     }
+   
     if (shading == 1) {
       stringOfShading = "O";
     }
+  
     if (shading == 2) {
       stringOfShading = "T";
     }
+  
     if (shading == 3) {
       stringOfShading = "S";
     }
+  
     if (shape == 1) {
       stringOfShape = "O";
     }
+  
     if (shape == 2) {
       stringOfShape = "D";
     }
+  
     if (shape == 3) {
       stringOfShape = "S";
     }
@@ -76,6 +87,7 @@ public class Card {
   private int fixValue(int valueToFix) {
     if (valueToFix < 1 || valueToFix > 3)
       return (((valueToFix % 3) + 3) % 3) + 1;
+    
     else
       return valueToFix;
   }
