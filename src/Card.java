@@ -2,8 +2,11 @@ public class Card {
   // Create the rest of this class yourself
   
   private int quantity;
+  
   private int color;
+  
   private int shading;
+  
   private int shape;
   
   public Card(int cQ, int cC, int cS, int cSh) {
@@ -41,8 +44,11 @@ public class Card {
   
   public String toString() {
     String stringOfQuantity = "" + quantity;
+    
     String stringOfColor = "";
+    
     String stringOfShading = "";
+    
     String stringOfShape = "";
     
     if (color == 1) {
@@ -85,11 +91,13 @@ public class Card {
   }
   
   private int fixValue(int valueToFix) {
-    if (valueToFix < 1 || valueToFix > 3)
+    if (valueToFix < 1 || valueToFix > 3) {
       return (((valueToFix % 3) + 3) % 3) + 1;
+    }
     
-    else
+    else {
       return valueToFix;
+    }
   }
   
   public boolean equals(Object obj) {

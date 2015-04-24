@@ -22,6 +22,7 @@ public class Deck {
         }
       }
     }
+    
     nextCardIndex = 0;
     
     Collections.shuffle(cards);
@@ -53,8 +54,11 @@ public class Deck {
         StringTokenizer tokenizer = new StringTokenizer(line);
         
         int quantity = Integer.parseInt(tokenizer.nextToken());
+        
         int color = Integer.parseInt(tokenizer.nextToken());
+        
         int shading = Integer.parseInt(tokenizer.nextToken());
+        
         int shape = Integer.parseInt(tokenizer.nextToken());
         
         cards.add(new Card(quantity, color, shading, shape));
@@ -62,6 +66,7 @@ public class Deck {
         nextCardIndex = 0;
       }
     }
+    
     catch(Exception e) {
       throw new RuntimeException("Error while reading file: " + e.toString());
     }
@@ -77,6 +82,7 @@ public class Deck {
       
       return cards.get(nextCardIndex -1);
     }
+    
     else {
       return null;
     }

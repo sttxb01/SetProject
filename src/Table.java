@@ -26,29 +26,30 @@ public class Table {
     
     return false;
   }
-  
-  private void removeCard(Card c) {
+  private void removeCard(Card c){
     TableNode curr = head;
     
     TableNode prev = null;
     
-    if(! c.equals(curr.getCard())) {
-      curr.getNext();
+    if(head == null) {
+      return;
     }
     
-    else {
-      if(curr == head) {
-        head = head.getNext();
+    while(curr != null){
+      if(c.equals(curr.getCard())) {
+        if(curr == head) {
+          head = head.getNext();
+        }
+        
+        else {
+          prev.setNext(curr.getNext());
+        }
       }
       
-      else {
-        prev.setNext(curr.getNext());
-      }
+      prev = curr;
+      
+      curr = curr.getNext();
     }
-    
-    prev = curr;
-    
-    curr = curr.getNext();
   }
   
   public void removeSet(Card c1, Card c2, Card c3) {
@@ -69,7 +70,9 @@ public class Table {
     }
     
     removeCard(c1);
+    
     removeCard(c2);
+      
     removeCard(c3);
   }
   
@@ -77,6 +80,10 @@ public class Table {
     TableNode temp = head;
     
     int length = 0;
+    
+    if(head == null) {
+      return 0;
+    }
     
     while(temp != null) {
       length ++;
@@ -89,13 +96,16 @@ public class Table {
   
   public Card getCard(int index) {
     TableNode curr = head;
-    if(head == null)
+    
+    if(head == null) {
       return null;
+    }
+    
     if(index < numCards())
     {
-      for(int i = 0; i<numCards();i++)
+      for(int i = 0; i < index; i++)
       {
-        curr.getNext();
+        curr = curr.getNext();
       }
       return curr.getCard();
     }
@@ -105,7 +115,9 @@ public class Table {
   
   public int numSets() {
     TableNode nodeA = head;
+    
     TableNode nodeB = null;
+    
     TableNode nodeC = null;
     
     int numSets = 0;
