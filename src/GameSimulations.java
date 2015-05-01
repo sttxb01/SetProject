@@ -1,6 +1,6 @@
 public class GameSimulations {
   public static void main(String[] args) {
-    int games = 1;
+    int games = 1000000;
     
     int sets = 0;
     
@@ -22,8 +22,8 @@ public class GameSimulations {
     
     System.out.println("Number of card leftovers: " + meatloaves);
     
-    System.out.println("Average number of sets: " + sets / 1);
+    System.out.println("Average number of sets: " + sets / 1000000);
     
-    System.out.println("Average number of card leftovers: " + meatloaves / 1);
+    System.out.println("Average number of card leftovers: " + meatloaves / 1000000);
   }
 }
